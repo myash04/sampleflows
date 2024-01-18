@@ -24,33 +24,33 @@
 
             --CHECK QUEUE MANAGER DOWN
             IF (DQMERR = 'Failed to connect to queue manager') THEN
-                IF ( ERR = 'MASTER_ALPHA') THEN
+                IF ( ERR = 'IMPS_ALPHA') THEN
                     SET OutputRoot = InputRoot;
                     PROPAGATE TO TERMINAL 'out3';
                     RETURN FALSE;
-                ELSEIF (ERR = 'MASTER_BRAVOBUFF') THEN
+                ELSEIF (ERR = 'IMPS_BRAVOBUFF') THEN
                     SET OutputRoot = InputRoot;
                     PROPAGATE TO TERMINAL 'out2';
                     SET OutputRoot = InputRoot;
                     PROPAGATE TO TERMINAL 'out3';
                     RETURN FALSE;
-                ELSEIF (ERR = 'MASTER_CHARLIE') THEN
+                ELSEIF (ERR = 'IMPS_CHARLIE') THEN
                     RETURN FALSE;
                 END IF;
             END IF;
             --CHECK QUEUE DOWN
             IF (DQERR = 'Failed to open queue') THEN
-                IF ( ERR = 'MASTER_ALPHA') THEN
+                IF ( ERR = 'IMPS_ALPHA') THEN
                     SET OutputRoot = InputRoot;
                     PROPAGATE TO TERMINAL 'out3';
                     RETURN FALSE;
-                ELSEIF (ERR = 'MASTER_BRAVOBUFF') THEN
+                ELSEIF (ERR = 'IMPS_BRAVOBUFF') THEN
                     SET OutputRoot = InputRoot;
                     PROPAGATE TO TERMINAL 'out2';
                     SET OutputRoot = InputRoot;
                     PROPAGATE TO TERMINAL 'out3';
                     RETURN FALSE;
-                ELSEIF (ERR = 'MASTER_CHARLIE') THEN
+                ELSEIF (ERR = 'IMPS_CHARLIE') THEN
                     RETURN FALSE;
                 END IF;
             END IF;
