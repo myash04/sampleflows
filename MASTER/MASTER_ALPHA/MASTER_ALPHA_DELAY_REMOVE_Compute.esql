@@ -4,7 +4,7 @@
         CALL CopyMessageHeaders();
         CALL CopyEntireMessage();
         DECLARE returnValue BOOLEAN;
-        SET returnValue = SLEEP(5000); /* attempt to sleep for five second */
+        SET returnValue = SLEEP(10); /* attempt to sleep for five second */
         -- SET OutputRoot.MQRFH2.usr.MsgId = InputRoot.MQMD.MsgId;
         RETURN TRUE;
     END;
